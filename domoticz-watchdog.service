@@ -1,0 +1,12 @@
+[Unit]
+Description=Domoticz watchdog service
+After=rc.local.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/domoticz-watchdog
+ExecStart=/usr/bin/python3 /home/pi/domoticz-watchdog/domoticz-watchdog.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
